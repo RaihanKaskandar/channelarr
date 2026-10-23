@@ -1,0 +1,34 @@
+{
+  "name": "channelarr",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Filter an Xtream Codes IPTV account into an M3U + XMLTV EPG for Jellyfin",
+  "author": "Raihan Kaskandar (https://github.com/RaihanKaskandar)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RaihanKaskandar/channelarr.git"
+  },
+  "keywords": [
+    "iptv",
+    "xtream",
+    "m3u",
+    "xmltv",
+    "epg",
+    "jellyfin",
+    "self-hosted"
+  ],
+  "workspaces": [
+    "server",
+    "web"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w server & npm run dev -w web",
+    "build": "npm run build -w web && npm run build -w server",
+    "test": "npm test -w server",
+    "typecheck": "npm run typecheck -w server && npm run typecheck -w web"
+  },
+  "engines": {
+    "node": ">=24"
+  }
+}

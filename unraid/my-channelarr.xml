@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>channelarr</Name>
+  <Repository>channelarr:latest</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>Channelarr filters an Xtream Codes IPTV account down to the channels you want and publishes an M3U playlist plus a matching XMLTV guide for Jellyfin Live TV. Streams are redirected to the provider, not proxied. Locally built image, so Unraid can not check it for updates.</Overview>
+  <Category>MediaServer:Video Tools:</Category>
+  <WebUI>http://[IP]:[PORT:9292]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/RaihanKaskandar/channelarr/main/web/public/favicon.svg</Icon>
+  <ExtraParams>--user 99:100</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled/>
+  <Requires/>
+  <Config Name="Data" Target="/data" Default="/mnt/cache/appdata/channelarr" Mode="rw" Description="Database and cached guide files" Type="Path" Display="always" Required="true" Mask="false">/mnt/cache/appdata/channelarr</Config>
+  <Config Name="WebUI" Target="9292" Default="9292" Mode="tcp" Description="Web UI and the M3U/EPG/stream links for Jellyfin" Type="Port" Display="always" Required="true" Mask="false">9292</Config>
+  <Config Name="Public URL" Target="PUBLIC_URL" Default="" Mode="" Description="Address written into the M3U and EPG links. Leave empty to use the address the request came in on." Type="Variable" Display="advanced" Required="false" Mask="false"></Config>
+  <Config Name="TZ" Target="TZ" Default="Europe/Berlin" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">Europe/Berlin</Config>
+</Container>

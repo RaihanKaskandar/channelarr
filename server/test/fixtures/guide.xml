@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tv SYSTEM "xmltv.dtd">
+<tv generator-info-name="mock-panel">
+  <channel id="BBCOne.uk">
+    <display-name>BBC One</display-name>
+    <display-name>BBC 1</display-name>
+    <icon src="http://img.example/bbc1.png" />
+  </channel>
+  <channel id="das.erste.de">
+    <display-name>Das Erste</display-name>
+  </channel>
+  <channel id="unused.channel">
+    <display-name>Nobody Watches This</display-name>
+  </channel>
+  <programme start="{{T0}} +0000" stop="{{T1}} +0000" channel="BBCOne.uk">
+    <title lang="en">News at Six &amp; Weather</title>
+    <sub-title>Evening edition</sub-title>
+    <desc>Headlines&nbsp;tonight.</desc>
+    <category>News</category>
+    <episode-num system="xmltv_ns">1.4.</episode-num>
+    <new />
+  </programme>
+  <programme start="{{T1}} +0000" stop="{{T2}} +0000" channel="BBCOne.uk">
+    <title>EastEnders</title>
+    <rating system="BBFC"><value>12</value></rating>
+  </programme>
+  <programme start="{{T1}} +0000" stop="{{T3}} +0000" channel="das.erste.de">
+    <title>Tagesschau</title>
+  </programme>
+  <programme start="{{T2}} +0000" stop="{{T3}} +0000" channel="das.erste.de">
+    <title>Overlapping show</title>
+  </programme>
+  <programme start="{{T0}} +0000" stop="{{T1}} +0000" channel="unused.channel">
+    <title>Should not be stored</title>
+  </programme>
+</tv>

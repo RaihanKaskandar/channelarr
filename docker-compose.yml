@@ -1,0 +1,18 @@
+services:
+  channelarr:
+    build: .
+    image: channelarr:latest
+    container_name: channelarr
+    restart: unless-stopped
+    ports:
+      - "9292:9292"
+    volumes:
+      # A named volume, so the app (which runs as a normal user) can write to it.
+      - channelarr-data:/data
+    environment:
+      - TZ=Europe/Berlin
+      # Optional: the address Jellyfin should use, if it differs from how you open the UI.
+      # - PUBLIC_URL=http://192.168.1.10:9292
+
+volumes:
+  channelarr-data:
