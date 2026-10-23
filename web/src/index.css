@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: #161925;
+  --color-panel: #1e2130;
+  --color-panel-2: #262a3c;
+  --color-line: #33384d;
+  --color-muted: #9aa0b8;
+  --color-accent: #6279cd;
+  --color-accent-strong: #7b90e0;
+  --color-ok: #4fbf8b;
+  --color-warn: #e0b04f;
+  --color-bad: #e06a6a;
+}
+
+html,
+body {
+  background: var(--color-bg);
+  color: #e7e9f2;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+@utility card {
+  @apply rounded-xl border border-line bg-panel p-5;
+}
+@utility btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-lg px-3.5 py-2 text-sm font-medium transition disabled:cursor-not-allowed disabled:opacity-50;
+}
+@utility btn-primary {
+  @apply btn bg-accent text-white hover:bg-accent-strong;
+}
+@utility btn-ghost {
+  @apply btn border border-line bg-panel-2 text-[#e7e9f2] hover:border-accent;
+}
+@utility btn-danger {
+  @apply btn border border-bad/40 bg-bad/10 text-bad hover:bg-bad/20;
+}
+@utility input {
+  @apply w-full rounded-lg border border-line bg-bg px-3 py-2 text-sm outline-none placeholder:text-muted/60 focus:border-accent;
+}
+@utility label {
+  @apply mb-1 block text-xs font-medium uppercase tracking-wide text-muted;
+}
+@utility badge {
+  @apply inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium;
+}
